@@ -3,18 +3,30 @@ package backend;
 import java.util.Random;
 
 public class Dice {
-    private int value;
+    private int fValue;
+    private int sValue;
 
     public Dice() {
-        this.value = 1;
+        this.fValue = 1;
+        this.sValue = 1;
     }
 
-    public void roll() {
+    private void roll() {
         Random rand = new Random();
-        value = rand.nextInt(6) + 1;
+        fValue = rand.nextInt(6) + 1;
+        sValue = rand.nextInt(6) + 1;
     }
 
-    public int getValue() {
-        return value;
+    public int getSum() {
+        roll();
+        return fValue + sValue;
+    }
+
+    public int getfValue() {
+        return fValue;
+    }
+
+    public int getsValue() {
+        return sValue;
     }
 }

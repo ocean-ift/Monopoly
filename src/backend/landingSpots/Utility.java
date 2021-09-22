@@ -1,19 +1,15 @@
 package backend.landingSpots;
 
+import backend.Player;
+
 public class Utility extends Property implements Landable {
 
-    public Utility(String name, int price, int rent) {
-        super(name, price, rent);
+    public Utility(int num) {
+        this(num == 12? "Electric Company" : num == 28? "Water Company" : "Unknown");
     }
 
-    @Override
-    public void purchase() {
-
-    }
-
-    @Override
-    public void auction() {
-
+    public Utility(String name) {
+        super(name, 150, 20);
     }
 
     @Override

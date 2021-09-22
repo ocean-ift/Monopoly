@@ -10,6 +10,7 @@ public class Player {
     private String name;
     private int cash;
     private ArrayList<Property> properties = new ArrayList<>();
+    private int position; //ranges from 0 (go) to 39 (second blue property)
 
     public void addCash(int cash) {
         this.cash += cash;
@@ -50,7 +51,30 @@ public class Player {
         }
     }
 
+    public void move(int distance) {
+        if (this.position + distance > 39) {
+            this.position = distance - (39 - this.position) - 1;
+        } else {
+            this.position += distance;
+        }
+    }
+
     public List<Property> getProperties() {
         return properties;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void changeCash(int diff) {
+        cash += diff;
+        if (cash < 1) {
+            System.out.println(GameManager.removePlayer(this));
+        }
     }
 }
