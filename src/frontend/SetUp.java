@@ -35,6 +35,7 @@ public class SetUp {
         play.setOnAction(event -> {
             GameManager.setNumPlayers(numPlayers.getValue());
             GameManager.initGame();
+
         });
         return play;
     }

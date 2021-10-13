@@ -5,7 +5,7 @@ import backend.*;
 public class Railroad extends Property implements Landable { //rent changes based on number of rails owned
 
     public Railroad(int num) {
-        this(num == 5? "Rail 1" : num == 15? "Rail 2" : num == 25? "Rail 3" : num == 35? "Rail 4" : "Unknown");
+        this(num == 5? "Reading Railroad" : num == 15? "Pennsylvania Avenue" : num == 25? "B and O Railroad" : num == 35? "Short Line" : "Unknown");
     }
 
     private Railroad(String name) {

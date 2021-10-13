@@ -11,7 +11,7 @@ public class Tax implements Landable {
             this.name = "Income Tax";
             this.tax = 200;
         } else if (num == 38) {
-            this.name = "Lux tax";
+            this.name = "Luxury tax";
             this.tax = 100;
         } else {
             this.name = "unknown";
