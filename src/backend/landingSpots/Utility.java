@@ -16,4 +16,9 @@ public class Utility extends Property implements Landable {
     int getRent() {
         return 0;
     }
+
+    @Override
+    public String description() {
+        return this.name;
+    }
 }

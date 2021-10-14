@@ -35,7 +35,8 @@ public class SetUp {
         play.setOnAction(event -> {
             GameManager.setNumPlayers(numPlayers.getValue());
             GameManager.initGame();
-
+            System.out.println(GameManager.getCurrentPlayer().status());
+            GameManager.getBoardPositions();
         });
         return play;
     }

@@ -3,15 +3,15 @@ package backend;
 import backend.landingSpots.*;
 
 public class Board { //Singleton pattern
-    private Board board;
-    private Landable[] landables;
+    private static Board board;
+    protected Landable[] landables;
     private final static int NUMBER_OF_SQUARES = 40;
 
     public Board() {
         initBoard();
     }
 
-    public Board getBoardInstance() {
+    public static Board getBoardInstance() {
         if (board == null) {
             board = new Board();
         }

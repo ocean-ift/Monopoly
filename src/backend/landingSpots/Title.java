@@ -45,4 +45,9 @@ public class Title extends Property implements Landable {
             default -> "Not a Title Spot";
         };
     }
+
+    @Override
+    public String description() {
+        return this.name;
+    }
 }

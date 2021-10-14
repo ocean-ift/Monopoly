@@ -27,4 +27,9 @@ public class Tax implements Landable {
         player.addCash((-1) * tax);
         return String.format("%s has $%d remaining.", player.getName(), player.getCash());
     }
+
+    @Override
+    public String description() {
+        return this.name;
+    }
 }

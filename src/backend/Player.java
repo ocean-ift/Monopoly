@@ -85,6 +85,14 @@ public class Player {
         }
     }
 
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
     public String status() {
         return String.format("Player %s on spot %d with %d properties and %d dollars",
                 this.name,

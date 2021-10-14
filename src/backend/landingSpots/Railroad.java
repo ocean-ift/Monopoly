@@ -29,4 +29,9 @@ public class Railroad extends Property implements Landable { //rent changes base
             default -> 0;
         };
     }
+
+    @Override
+    public String description() {
+        return this.name;
+    }
 }
