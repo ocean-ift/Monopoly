@@ -70,4 +70,11 @@ public class GameManager {
         }
         return String.format("%s could not be found.", player.getName());
     }
+
+    public static void getBoardPositions() {
+        Board gBoard = Board.getBoardInstance();
+        for (Landable spot : gBoard.landables) {
+            System.out.println(spot.description());
+        }
+    }
 }

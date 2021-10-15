@@ -11,7 +11,7 @@ public class Tax implements Landable {
             this.name = "Income Tax";
             this.tax = 200;
         } else if (num == 38) {
-            this.name = "Lux tax";
+            this.name = "Luxury tax";
             this.tax = 100;
         } else {
             this.name = "unknown";
@@ -26,5 +26,10 @@ public class Tax implements Landable {
     public String taxPlayer(Player player) {
         player.addCash((-1) * tax);
         return String.format("%s has $%d remaining.", player.getName(), player.getCash());
+    }
+
+    @Override
+    public String description() {
+        return this.name;
     }
 }

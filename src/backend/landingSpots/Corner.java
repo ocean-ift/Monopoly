@@ -16,4 +16,9 @@ public class Corner implements Landable {
             default -> "Unknown";
         };
     }
+
+    @Override
+    public String description() {
+        return getType();
+    }
 }

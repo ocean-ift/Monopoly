@@ -12,4 +12,9 @@ public class Business extends Property implements Landable {
     int getRent() {
         return 0;
     }
+
+    @Override
+    public String description() {
+        return this.name;
+    }
 }
