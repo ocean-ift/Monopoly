@@ -20,4 +20,8 @@ public class MainScreen extends Application {
         stage.setScene(WelcomeScreen.getScene());
         stage.show();
     }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 }

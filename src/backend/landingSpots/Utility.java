@@ -18,6 +18,11 @@ public class Utility extends Property implements Landable {
     }
 
     @Override
+    int changeRent() {
+        return 0;
+    }
+
+    @Override
     public String description() {
         return this.name;
     }

@@ -12,7 +12,8 @@ public class Player {
     private ArrayList<Property> properties;
     private int position; //ranges from 0 (go) to 39 (second blue property)
 
-    Player () {
+    Player (String name) {
+        this.name = name;
         this.cash = 1500;
         this.properties = new ArrayList<>();
         this.position = 0;

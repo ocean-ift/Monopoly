@@ -30,7 +30,8 @@ public class Board { //Singleton pattern
             } else if (i == 38 || i == 4) {
                 landables[i] = new Tax(i);
             } else if (i == 2 || i == 7 || i == 17 || i == 22 || i == 33 || i == 36) {
-                landables[i] = new Chance(); //every time you land on a chance block, generate a random chance card
+                //landables[i] = new Chance(); //every time you land on a chance block, generate a random chance card
+                //do nothing, there is no current player so we don't need to make any chance cards
             } else if (i == 12 || i == 28) {
                 landables[i] = new Utility(i);
             } else {

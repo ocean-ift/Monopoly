@@ -18,6 +18,11 @@ public class Title extends Property implements Landable {
         return 0;
     }
 
+    @Override
+    int changeRent() {
+        return 0;
+    }
+
     String getName(int num) {
         return switch (num) {
             case 1 -> "Mediterranean Avenue";

@@ -14,7 +14,13 @@ public class Business extends Property implements Landable {
     }
 
     @Override
+    int changeRent() {
+        return 0; //this one's rent cannot change
+    }
+
+    @Override
     public String description() {
         return this.name;
     }
+
 }

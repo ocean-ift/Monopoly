@@ -43,6 +43,8 @@ public abstract class Property implements Landable {
 
     abstract int getRent(); //determining rent differs based on property type (title vs utility)
 
+    abstract int changeRent();
+
     public String getName() {
         return name;
     }

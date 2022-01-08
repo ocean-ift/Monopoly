@@ -2,6 +2,7 @@ package frontend;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -12,10 +13,14 @@ public class WelcomeScreen {
 
         StackPane pane = new StackPane();
         VBox screen = new VBox(10);
+
         Button play = createPlayButton();
         Button options = createOpButton();
+
         screen.getChildren().addAll(play, options);
+        screen.setAlignment(Pos.CENTER);
         pane.getChildren().add(screen);
+
         Scene welcomeScene = new Scene(pane, MainScreen.width, MainScreen.height);
         welcomeScene.getStylesheets().add("/frontend/design/css/WelcomeScreen.css");
 

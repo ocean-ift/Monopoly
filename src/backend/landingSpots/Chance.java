@@ -15,13 +15,13 @@ public class Chance implements Landable {
     private String message;
 
     public Chance() {
-         this.message = getCard();
+        this.current = GameManager.getCurrentPlayer();
+        this.message = getCard();
     }
 
     private String getCard() {
         Random rand = new Random();
         int card = rand.nextInt(NUM_MESSAGES);
-        current = GameManager.getCurrentPlayer();
 
         switch (card) {
             case 0 : //go to GO

@@ -4,8 +4,9 @@ import backend.landingSpots.*;
 
 public class GameManager {
 
-    protected static int numPlayers = 0;
-    protected static int cPlayerNum = 0;
+    protected static int numPlayers;
+    protected static int cPlayerNum = 0; //current player's number
+
     protected static Player players[];
     protected static Player currentPlayer;
     protected static Landable landables[];
@@ -28,13 +29,16 @@ public class GameManager {
 
     public static void createPlayers() {
         players = new Player[numPlayers];
-        for (Player player : players) {
-            player = new Player();
+        System.out.println("Inside Create Players (GameManager)");
+        for (int i = 0; i < numPlayers; i++) {
+            players[i] = new Player("Name " + i); //change name to take an input of names
+            System.out.println(players[i].getName());
         }
+        System.out.println();
     }
 
     public static Player getCurrentPlayer() {
-        return players[turn - 1];
+        return currentPlayer;
     }
 
     public static void nextTurn() {
@@ -73,8 +77,15 @@ public class GameManager {
 
     public static void getBoardPositions() {
         Board gBoard = Board.getBoardInstance();
-        for (Landable spot : gBoard.landables) {
-            System.out.println(spot.description());
+        System.out.println("Baord pieces - in getBoardPositions (GameManager)");
+        int i = 0;
+        for (Landable spot : gBoard.landables) { //spits out each of the spots generated on the board instance
+            if (spot == null) {
+                System.out.println(i);
+            } else {
+                System.out.println(spot.description());
+            }
+            i++;
         }
     }
 }

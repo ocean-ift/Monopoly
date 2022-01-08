@@ -1,6 +1,7 @@
 package frontend;
 
 import backend.GameManager;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -16,12 +17,13 @@ public class SetUp {
         VBox screen = new VBox(10);
 
         ComboBox<Integer> numPlayers = new ComboBox<>();
-        numPlayers.getItems().addAll(1, 2, 3, 4);
+        numPlayers.getItems().addAll(2, 3, 4);
         numPlayers.setPromptText("Select Number of Players");
 
         Button play = createPlayButton(numPlayers);
 
         screen.getChildren().addAll(numPlayers, play);
+        screen.setAlignment(Pos.CENTER);
         pane.getChildren().add(screen);
         Scene setupScene = new Scene(pane, MainScreen.width, MainScreen.height);
         setupScene.getStylesheets().add("/frontend/design/css/SetUpScreen.css");
@@ -35,8 +37,10 @@ public class SetUp {
         play.setOnAction(event -> {
             GameManager.setNumPlayers(numPlayers.getValue());
             GameManager.initGame();
-            System.out.println(GameManager.getCurrentPlayer().status());
+            System.out.println("Inside createPlayButton (Setup) : " + GameManager.getCurrentPlayer().status());
+            System.out.println();
             GameManager.getBoardPositions();
+            MainScreen.setScene(GameScreen.getScene());
         });
         return play;
     }
